@@ -1,0 +1,89 @@
+.signup-page{
+    height: 100vh;
+    width: 100%;
+    background-image:url('/public/images/202506022200.png') ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative
+}
+
+.signup-page::before{
+    content: '';
+    background-color: rgba(205, 205, 205, 0.892);
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+}
+
+.signup-form{
+    max-width: 250px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2)
+}
+
+.signup-component{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.signup-form label{
+    margin-bottom: 0.5rem;
+    font-weight: bold
+}
+
+.signup-form input{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2 ease
+}
+
+button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-confirm-button{
+    background-color: #007bff;
+    color:white;
+    border:none;
+}
+
+.form-confirm-button:hover{
+    background-color: #0056b3
+}
+
+.form-return-button{
+    background-color: #e3e4e4;
+    color:#333;
+    border: 1px solid #ccc;
+}
+
+.form-return-button:hover{
+    background-color: #f2f2f2;
+}
