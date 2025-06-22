@@ -61,7 +61,7 @@ const SignupPage = () => {
             <div className='signup-component'>
                 <label>生日:</label>
                 <input type="date" 
-                {...register('birthday', {setValueAs: v => v? new Date(v):null})} />
+                {...register('birthday', {setValueAs: v => v? v:null})} />
             </div>
 
             <div className='form-buttons'>
