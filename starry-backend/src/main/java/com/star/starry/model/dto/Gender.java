@@ -1,5 +1,8 @@
 package com.star.starry.model.dto;
 
+import lombok.Getter;
+
+@Getter
 public enum Gender {
     MALE(1),
 
@@ -7,7 +10,7 @@ public enum Gender {
 
     UNDEFINED(-1);
 
-    private Integer value;
+    private final Integer value;
 
     Gender(Integer value) {
         this.value = value;

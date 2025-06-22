@@ -1,19 +1,35 @@
 package com.star.starry.service;
 
+import com.star.starry.dao.SignupDao;
 import com.star.starry.model.dto.Account;
+import com.star.starry.model.dto.Gender;
 import com.star.starry.model.form.SignupForm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Service
 public class SignupService {
+    @Autowired
+    private SignupDao dao;
+
+
     public void signup(SignupForm form) {
+        var id = UUID.randomUUID().toString();
+        var gender = form.getGender() == null ? Gender.UNDEFINED : Gender.valueOf(form.getGender());
+        var birthday = form.getBirthday() == null ? null : LocalDate.parse(form.getBirthday());
+
         var account = Account.builder()
+                .id(id)
                 .name(form.getName())
                 .email(form.getEmail())
                 .password(form.getPassword())
+                .gender(gender)
+                .birthday(birthday)
                 .build();
 
+        dao.save(account);
     }
 }
