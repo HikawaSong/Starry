@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SignupDao extends JpaRepository<Account,String> {
+
+    boolean existsByName(String name);
 }

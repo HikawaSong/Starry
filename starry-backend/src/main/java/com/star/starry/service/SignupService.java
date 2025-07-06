@@ -1,6 +1,8 @@
 package com.star.starry.service;
 
 import com.star.starry.dao.SignupDao;
+import com.star.starry.exception.AppException;
+import com.star.starry.exception.ErrorCode;
 import com.star.starry.model.dto.Account;
 import com.star.starry.model.dto.Gender;
 import com.star.starry.model.form.SignupForm;
@@ -17,6 +19,8 @@ public class SignupService {
 
 
     public void signup(SignupForm form) {
+        checkNameDuplicated(form.getName());
+
         var id = UUID.randomUUID().toString();
         var gender = form.getGender() == null ? Gender.UNDEFINED : Gender.valueOf(form.getGender());
         var birthday = form.getBirthday() == null ? null : LocalDate.parse(form.getBirthday());
@@ -31,5 +35,10 @@ public class SignupService {
                 .build();
 
         dao.save(account);
+    }
+
+    private void checkNameDuplicated(String name) {
+        boolean existed = dao.existsByName(name);
+        if (existed) throw new AppException(ErrorCode.USER_NAME_DUPLICATED);
     }
 }
