@@ -2,7 +2,8 @@
 
 export const ROUTES = {
     HOME:'/',
-    CATEGORY:'/category',
+    LIVES:'/lives',
+    GOODS:'/goods',
     SIGN_UP:'/sign-up',
     NEWS:'/news'
 }

@@ -4,6 +4,8 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 
 @Data
+@Getter
+@Setter
 public class SignupForm {
 
     @NotBlank(message = "{username.notBlank}")

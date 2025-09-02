@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { ROUTES } from '../routes/routes';
 
 const navItems = [
-    {label:'作品类别', path:ROUTES.CATEGORY},
+    {label:'Live', path:ROUTES.LIVES},
+    {label:'谷子', path:ROUTES.GOODS},
     {label:'新闻', path:ROUTES.NEWS},
     {label:'登录', path:ROUTES.SIGN_UP}
 ];

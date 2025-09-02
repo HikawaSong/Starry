@@ -1,5 +1,6 @@
 package com.star.starry.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
+@Slf4j
 public class ExceptionHandler{
 
     /**
@@ -23,6 +25,8 @@ public class ExceptionHandler{
         result.put("code", ex.getCode());
         result.put("message", ex.getMessage());
 
+        log.warn("Business Error -> code={} msg={}", ex.getCode(), ex.getMessage(), ex);
+
         return ResponseEntity.badRequest().body(result);
 
     }
@@ -35,13 +39,15 @@ public class ExceptionHandler{
             result.put(fieldError.getField(),fieldError.getDefaultMessage());
         }
 
+        log.warn("Valid Error -> msg={}",  ex.getMessage(), ex);
+
         return ResponseEntity.badRequest().body(result);
     }
 
     /**
      * 设置其他的500未知异常
      * @param ex 异常
-     * @return 抛给前端的返回值
+     * @return 抛给前端的返回值ff
      */
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String,Object>> handleOtherException(Exception ex){
@@ -49,6 +55,8 @@ public class ExceptionHandler{
 
         result.put("code", 500);
         result.put("message", "UNKNOWN ERROR");
+
+        log.warn("Error -> msg={}", ex.getMessage(), ex);
 
         return ResponseEntity.internalServerError().body(result);
 
