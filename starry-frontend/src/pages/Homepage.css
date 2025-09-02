@@ -1,0 +1,38 @@
+.homepage{
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.hp-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* 顶部导航栏 */
+.hp-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+}
+
+/* 主内容 */
+.hp-main {
+  max-width: 1820px; /* 中心区域最大宽度 */
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+/* Banner 区域 */
+.banner-section {
+  margin-top: 5rem;
+  margin-inline: auto;  /* 自动居中 */
+  max-width: 1600px;    /* 限制最大宽度 */
+  padding-inline: 2rem; /* 内部留白 */
+}
+
