@@ -18,7 +18,7 @@ public class SignupService {
     private SignupDao dao;
 
 
-    public void signup(SignupForm form) {
+    public Account signup(SignupForm form) {
         checkNameDuplicated(form.getName());
 
         var id = UUID.randomUUID().toString();
@@ -34,7 +34,7 @@ public class SignupService {
                 .birthday(birthday)
                 .build();
 
-        dao.save(account);
+        return dao.save(account);
     }
 
     private void checkNameDuplicated(String name) {

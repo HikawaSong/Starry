@@ -19,6 +19,7 @@ const SignupPage = () => {
         try{
             await signup(data)
             toast.success("注册成功！")
+            navigate("/");     
         }catch(error:any){
             toast.error(error.message || "注册失败！")
         };
@@ -33,29 +34,29 @@ const SignupPage = () => {
             <div className='signup-component'>
                 <label>账号名:</label>
                 <input {...register('name')} />
-                {errors.name && <p>{errors.name.message}</p>}
+                {errors.name && <p className="error-message">{errors.name.message}</p>}
             </div>
 
             <div className='signup-component'>
                 <label>邮箱:</label>
                 <input {...register('email')} />
-                {errors.email && <p>{errors.email.message}</p>}
+                {errors.email && <p className="error-message">{errors.email.message}</p>}
             </div>
 
              <div className='signup-component'>
                 <label>密码：</label>
                 <input type="password" {...register('password')} />
-                {errors.password && <p>{errors.password.message}</p>}
+                {errors.password && <p className="error-message">{errors.password.message}</p>}
             </div>
 
             <div className='signup-component'>
                 <label>性别:</label>
                 <select {...register('gender')}>
                     <option value="">秘密</option>
-                    <option value="male">男</option>
-                    <option value="female">女</option>
+                    <option value="MALE">男</option>
+                    <option value="FEMALE">女</option>
                 </select>
-                {errors.gender && <p>{errors.gender.message}</p>}
+                {errors.gender && <p className="error-message">{errors.gender.message}</p>}
             </div>
 
             <div className='signup-component'>

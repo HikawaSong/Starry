@@ -47,6 +47,12 @@
     width: 100%;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 button{
     width: 100%;
     padding: 0.75rem;
