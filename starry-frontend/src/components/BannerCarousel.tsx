@@ -1,6 +1,7 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import './BannerCarousel.css'
 
 import Banner from "../components/Banner";
 import { Swiper, SwiperSlide } from 'swiper/react'

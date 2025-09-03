@@ -1,7 +1,0 @@
-
-const Live =
-
-
-const HotLives = () =>{
-
-}

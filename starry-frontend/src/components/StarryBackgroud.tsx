@@ -22,22 +22,22 @@ const StarryBackground = () => {
         },
         background: {
           color: {
-            value: ["#000000"]
+            value: ["#ffffffff"]
           }
         },
         particles: {
           number: {
-            value: 200,
+            value: 80,
             density: {
               enable: true,
-              area: 50,
+              area: 100,
             },
           },
           color: {
-            value: ["#000000", "#ffffff"], // 可以指定多个颜色
+            value: ["#f60808ff", "#a6fab6ff","#7d67faff","#71fefaff","#f4f422ff"], // 可以指定多个颜色
             animation: {
               enable: true,   // 启用颜色变化动画
-              speed: 10,      // 动画速度
+              speed: 5,      // 动画速度
               sync: true      // 是否同步变化
             }
           },
@@ -53,8 +53,8 @@ const StarryBackground = () => {
           },
           size: {
             value: {
-              min:4,
-              max:11
+              min:5,
+              max:15
             },
             random: true,
           },

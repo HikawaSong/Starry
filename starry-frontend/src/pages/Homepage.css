@@ -13,12 +13,9 @@
 
 /* 顶部导航栏 */
 .hp-navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
-  padding: 0.5rem 1rem;
+  /*position: sticky;*/
+  margin: 1.5rem 2rem;
+
 }
 
 /* 主内容 */
@@ -30,9 +27,12 @@
 
 /* Banner 区域 */
 .banner-section {
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-inline: auto;  /* 自动居中 */
-  max-width: 1600px;    /* 限制最大宽度 */
+  max-width: 1400px;   
   padding-inline: 2rem; /* 内部留白 */
 }
 
+.live-card-list-section {
+  margin: 2rem 5rem 0 5rem;  /* 上 右 下 左 */
+}

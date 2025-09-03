@@ -1,0 +1,42 @@
+.live-card {
+  position: relative;
+  display: block;     /* a 默认 inline，改为 block */
+  width: 100%;  
+  max-width: 300px;      /* 不要 max-width 限制列宽，先铺满所在列 */
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.live-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* 图片：绝对定位 + cover，强制统一显示大小 */
+.live-card-img {
+  position: absolute;
+  inset: 0;           /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 不变形地裁剪填满 */
+  display: block;     /* 去掉 baseline 空隙 */
+}
+
+/* 右下角文字 */
+.live-card-text {
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  text-align: right;
+  color: #fff;
+  background: linear-gradient(to top right, rgba(0,0,0,.6), transparent);
+  padding: .5rem;
+  border-radius: 6px;
+}
+.live-card-text h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+.live-card-text p  { margin: .2rem 0 0; font-size: .9rem; opacity: .9; }

@@ -1,0 +1,68 @@
+.section {
+  margin: 3rem auto;
+  padding: 1.25rem 1.25rem 1.5rem;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  max-width: 100%;                 /* 居中宽度，可按需调整 */
+}
+
+/* 标题行：左边标题+描述，右边操作 */
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* 标题和副标题 */
+.section-title {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.section-desc {
+  margin: 0.3rem 0 0;
+  color: #6b7280;       /* 次要文字 */
+  font-size: .95rem;
+}
+
+/* 右侧操作：按钮/链接等 */
+.section-actions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.section-link {
+  text-decoration: none;
+  font-size: .95rem;
+  color: #374151;
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.section-link:hover {
+  background: rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.section-body {
+  margin-top: 1rem;
+}
+
+/* 小断点优化：窄屏时标题/操作换行更自然 */
+@media (max-width: 640px) {
+  .live-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
