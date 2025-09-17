@@ -4,9 +4,10 @@ import NavBar from "../components/NavBar";
 import StarryBackground from "../components/StarryBackgroud";
 import LiveCardList from "../components/LiveCardList";
 import DisplaySection from "../components/DisplaySection";
-
+import { hotlives } from "../api/auth";
 import "./Homepage.css";
 import type { LiveCardProps } from "../components/LiveCard";
+import { useEffect, useState } from "react";
 
 const Homepage = () =>{
     // 临时数据
@@ -16,13 +17,26 @@ const Homepage = () =>{
         { imgUrl: '/public/images/banner3.jpg', title: "Roselia-3", info: "Roselia-3" },
     ];
     
-    const cards: LiveCardProps[] = [
-        { id:'0001', title: 'Rosenlied', place: "東京", venue:'shibuya duo MUSIC EXCHANGE', url: "/public/images/Rosenlied_1.jpg",link:'/' },
-        { id:'0002', title: 'Poppin\'Canvas 〜芸術の秋、音楽の秋！〜', place: "山梨県", venue:'河口湖ステラシアター', url: "/public/images/Poppin'Canvas 〜芸術の秋、音楽の秋！〜_1.jpg",link:'/' },
-        { id:'0003', title: 'Stille Nacht, Rosen Nacht', place: "東京都", venue:'武蔵野の森総合スポーツプラザ', url: "/public/images/Stille Nacht, Rosen Nacht_1.png",link:'/' },
-        { id:'0004', title: '星空の夜想曲', place: "東京都", venue:'有明アリーナ', url: "/public/images/Roselia_11th.jpg",link:'/' },
 
-    ]
+    const [hotlives, setHotLives] =useState<LiveCardProps[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect( ()=> {
+        (async () => {
+            try{
+               const res =  await fetch('http://localhost:8080/api/lives/hot');
+               if (!res.ok) throw new Error('网络错误');
+                const data: LiveCardProps[] = await res.json();
+                setHotLives(data);
+            }catch(e){
+                 setError('热门Live加载失败');
+            }finally{
+                setLoading(false);
+            }
+        })();
+    }, []
+    )
 
 
     return(
@@ -40,10 +54,11 @@ const Homepage = () =>{
         <div className="live-card-list-section">
            <DisplaySection
             title="热门Live"
-
             actions={<a className="live-section-link" href="/lives/hot">查看全部</a>}
             >
-                <LiveCardList cards={cards} />
+                 {loading && <div>加载中...</div>}
+                {error && <div className="error">{error}</div>}
+                {!loading && !error && <LiveCardList cards={hotlives} />}
             </DisplaySection>
         </div>
 

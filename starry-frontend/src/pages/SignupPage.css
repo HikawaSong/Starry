@@ -1,7 +1,7 @@
 .signup-page{
     height: 100vh;
     width: 100%;
-    background-image:url('/public/images/202506022200.png') ;
+    background-image:url('/public/images/signup_background.png') ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

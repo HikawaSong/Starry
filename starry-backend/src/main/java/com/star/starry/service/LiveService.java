@@ -17,6 +17,8 @@ import java.util.List;
 
 @Service
 public class LiveService {
+    private static final String VIEWS_COUNT = "viewsCount";
+
     @Autowired
     private LiveStaticDao liveStaticDao;
 
@@ -30,10 +32,19 @@ public class LiveService {
     private ImageUrlService imageUrlService;
 
     public List<LiveCard> getHotLives(int n){
-        var pageRequest = PageRequest.of(0, n, Sort.by(Sort.Order.desc("viewsCount")));
-        var topLiveStaticList = liveStaticDao.findByOrderByViewsCountDesc(pageRequest);
+        var topLivePageRequest = PageRequest.of(0, n, Sort.by(Sort.Order.desc(VIEWS_COUNT)));
+        var topLiveStaticList = liveStaticDao.findByOrderByViewsCountDesc(topLivePageRequest);
         var hotLiveIdList = topLiveStaticList.stream().map(LiveStatic::getId).toList();
         var hotLiveList = liveDao.findByIdIn(hotLiveIdList);
+        var randomLiveCount = n - hotLiveList.size();
+        List<Live> randomLiveList = new ArrayList<>();
+        PageRequest randomLivePageRequest = PageRequest.of(0, n);
+        if (hotLiveList.isEmpty()){
+            randomLiveList = liveDao.findAll(randomLivePageRequest).getContent();
+        }else if (randomLiveCount > 0){
+            randomLiveList = liveDao.findByIdNotIn(hotLiveIdList, randomLivePageRequest);
+        }
+        hotLiveList.addAll(randomLiveList);
 
         List<LiveCard> list = new ArrayList<>();
         for (Live live : hotLiveList) {

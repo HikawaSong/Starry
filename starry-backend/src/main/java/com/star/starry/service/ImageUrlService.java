@@ -8,5 +8,5 @@ public class ImageUrlService {
     @Value("${img.base}")
     String base;
 
-    public String url(String key) { return base + key; }
+    public String url(String key) { return base + "/" + key; }
 }

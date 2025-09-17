@@ -18,9 +18,6 @@ public class Live extends BaseDto {
     private String title;
     private String place;
     private String venue;
-    private List<String> artists;
     private LocalDate date;
     private String imgKey;
-
-
 }
