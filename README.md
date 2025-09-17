@@ -1,7 +1,7 @@
-# 🎶 Starry — Live Events & Goods Platform (Frontend)
+# 🎶 Starry — Live Events & Goods Platform
 
-**Starry** is a modern web application for discovering and sharing information about **live music events**, **fan impressions**, and **anime-related goods (谷子)**.  
-It provides a refined and cute yet modern UI to browse events, read user-written articles, and showcase fan merchandise.
+**Starry** is a full-stack web application for discovering and sharing information about **live music events**, **user impressions**, and **anime-related goods**.  
+It provides a refined, cute, yet modern UI to browse events, read articles, and showcase fan merchandise.
 
 ---
 
@@ -43,7 +43,25 @@ It provides a refined and cute yet modern UI to browse events, read user-written
 
 ## 📂 Project Structure
 
-
+project-root/
+├─ starry-frontend/ # Frontend (React + TypeScript)
+│ ├─ src/
+│ │ ├─ components/ # UI components (Banner, LiveCard, HotLives, ...)
+│ │ ├─ pages/ # Page-level components (HomePage, ...)
+│ │ ├─ styles/ # CSS files
+│ │ └─ types/ # Shared TypeScript types
+│ ├─ public/ # Static assets
+│ └─ package.json
+│
+├─ starry-backend/ # Backend (Java + Spring Boot)
+│ ├─ src/
+│ │ ├─ main/java/ # Backend source code
+│ │ │ └─ com/starry/ # Packages (controllers, services, entities, repos)
+│ │ ├─ main/resources/ # Config (application.yml, schema.sql, ...)
+│ │ └─ test/ # Unit & integration tests
+│ └─ pom.xml
+│
+└─ README.md
 
 ---
 
@@ -55,13 +73,11 @@ git clone https://github.com/your-username/starry-frontend.git
 cd starry-frontend
 2. Install dependencies
 bash
-复制代码
 npm install
 # or
 yarn install
 3. Run the development server
 bash
-复制代码
 npm run dev
 # or
 yarn dev
