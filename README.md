@@ -27,43 +27,25 @@ It provides a refined, cute, yet modern UI to browse events, read articles, and 
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React + TypeScript  
-- **UI**: CSS (modular styles), responsive grid/flexbox  
-- **Components**:  
-  - `Banner` + `BannerCarousel` (Swiper.js)  
-  - `LiveCard` + `HotLives`  
-  - `NavBar`, `Footer`, `StarryBackground`  
-- **Libraries**:  
-  - [Swiper.js](https://swiperjs.com/) for carousels  
-  - React Hooks for state management  
-
----
-
 ## 📂 Project Structure
-
+```
 project-root/
-├─ starry-frontend/ # Frontend (React + TypeScript)
+├─ starry-frontend/
 │ ├─ src/
-│ │ ├─ components/ # UI components (Banner, LiveCard, HotLives, ...)
-│ │ ├─ pages/ # Page-level components (HomePage, ...)
-│ │ ├─ styles/ # CSS files
-│ │ └─ types/ # Shared TypeScript types
-│ ├─ public/ # Static assets
+│ │ ├─ components/
+│ │ ├─ pages/
+│ │ └─ styles/
 │ └─ package.json
 │
-├─ starry-backend/ # Backend (Java + Spring Boot)
+├─ starry-backend/
 │ ├─ src/
-│ │ ├─ main/java/ # Backend source code
-│ │ │ └─ com/starry/ # Packages (controllers, services, entities, repos)
-│ │ ├─ main/resources/ # Config (application.yml, schema.sql, ...)
-│ │ └─ test/ # Unit & integration tests
+│ │ ├─ main/java/
+│ │ ├─ main/resources/
+│ │ └─ test/
 │ └─ pom.xml
 │
 └─ README.md
-
----
+```
 
 ## 🚀 Getting Started
 
@@ -71,8 +53,9 @@ project-root/
 ```bash
 git clone https://github.com/your-username/starry-frontend.git
 cd starry-frontend
-2. Install dependencies
-bash
+```
+### 2.  Install dependencies
+```bash
 npm install
 # or
 yarn install
@@ -81,9 +64,10 @@ bash
 npm run dev
 # or
 yarn dev
+```
 Visit http://localhost:5173 in your browser.
 
-📸 Screenshots
+## 📸 Screenshots
 Homepage
 Header with navigation
 
@@ -95,7 +79,7 @@ User Articles and Goods sections
 
 (Screenshots to be added)
 
-📌 Roadmap
+## 📌 Roadmap
  Implement backend integration for lives & articles
 
  Add user authentication (login/register)
