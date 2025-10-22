@@ -46,16 +46,16 @@ public class LiveService {
         }
         hotLiveList.addAll(randomLiveList);
 
-        List<LiveCard> list = new ArrayList<>();
+        List<LiveCard> resultList = new ArrayList<>();
         for (Live live : hotLiveList) {
             var imgKey = live.getImgKey();
             var imgUrl = imageUrlService.url(imgKey);
             var liveCard = LiveCard.fromLive(live);
             liveCard.setUrl(imgUrl);
-            list.add(liveCard);
+            resultList.add(liveCard);
         }
 
-        return list;
+        return resultList;
 
     }
 }
