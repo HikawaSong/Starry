@@ -5,5 +5,6 @@ export const ROUTES = {
     LIVES:'/lives',
     GOODS:'/goods',
     SIGN_UP:'/sign-up',
-    NEWS:'/news'
+    NEWS:'/news',
+    IMPORT:'/import'
 }

@@ -1,6 +1,6 @@
 package com.star.starry.dao;
 
-import com.star.starry.model.entity.LiveImage;
+import com.star.starry.model.live.LiveImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

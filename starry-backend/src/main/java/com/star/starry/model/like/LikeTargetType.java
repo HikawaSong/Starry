@@ -1,4 +1,4 @@
-package com.star.starry.model;
+package com.star.starry.model.like;
 
 public enum LikeTargetType {
     COMMENT,

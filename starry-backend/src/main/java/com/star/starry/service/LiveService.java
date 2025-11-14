@@ -3,10 +3,9 @@ package com.star.starry.service;
 import com.star.starry.dao.LiveDao;
 import com.star.starry.dao.LiveImageDao;
 import com.star.starry.dao.LiveStaticDao;
-import com.star.starry.model.dto.LiveCard;
-import com.star.starry.model.entity.Live;
-import com.star.starry.model.entity.LiveImage;
-import com.star.starry.model.entity.LiveStatic;
+import com.star.starry.model.live.LiveCard;
+import com.star.starry.model.live.Live;
+import com.star.starry.model.live.LiveStatic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -57,5 +56,9 @@ public class LiveService {
 
         return resultList;
 
+    }
+
+    public void importLives(List<Live> liveList) {
+        liveDao.saveAll(liveList);
     }
 }

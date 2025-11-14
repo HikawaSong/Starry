@@ -1,4 +1,4 @@
-package com.star.starry.model.entity;
+package com.star.starry.model.live;
 
 import com.star.starry.model.common.BaseDto;
 import jakarta.persistence.Entity;
@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

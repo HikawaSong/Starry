@@ -3,9 +3,9 @@ package com.star.starry.service;
 import com.star.starry.dao.SignupDao;
 import com.star.starry.exception.AppException;
 import com.star.starry.exception.ErrorCode;
-import com.star.starry.model.dto.Account;
-import com.star.starry.model.dto.Gender;
-import com.star.starry.model.form.SignupForm;
+import com.star.starry.model.account.Account;
+import com.star.starry.model.account.Gender;
+import com.star.starry.model.account.SignupForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.star.starry.model;
+package com.star.starry.model.like;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
@@ -6,7 +6,6 @@ import jakarta.persistence.Enumerated;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,4 +1,4 @@
-package com.star.starry.model.dto;
+package com.star.starry.model.live;
 
 import com.star.starry.model.common.BaseDto;
 import jakarta.persistence.Entity;
@@ -8,23 +8,18 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDate;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @SuperBuilder
-public class Account extends BaseDto {
+public class LiveStatic extends BaseDto {
 
-    private String name;
+    private int viewsCount;
 
-    private String password;
+    private int commentCount;
 
-    private String email;
+    private int likeAccount;
 
-    private LocalDate birthday;
-
-    private Gender gender;
 }

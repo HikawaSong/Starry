@@ -1,4 +1,4 @@
-package com.star.starry.model.dto;
+package com.star.starry.model.comment;
 
 import com.star.starry.model.common.BaseDto;
 import jakarta.persistence.Entity;

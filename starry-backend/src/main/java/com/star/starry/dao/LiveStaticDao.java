@@ -1,6 +1,6 @@
 package com.star.starry.dao;
 
-import com.star.starry.model.entity.LiveStatic;
+import com.star.starry.model.live.LiveStatic;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

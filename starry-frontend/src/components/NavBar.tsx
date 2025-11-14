@@ -7,7 +7,8 @@ const navItems = [
     {label:'Live', path:ROUTES.LIVES},
     {label:'谷子', path:ROUTES.GOODS},
     {label:'新闻', path:ROUTES.NEWS},
-    {label:'登录', path:ROUTES.SIGN_UP}
+    {label:'登录', path:ROUTES.SIGN_UP},
+    {label:'上传', path:ROUTES.IMPORT}
 ];
 
 const NavBar = () =>{

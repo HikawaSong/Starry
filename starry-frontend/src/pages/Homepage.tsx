@@ -12,9 +12,9 @@ import { useEffect, useState } from "react";
 const Homepage = () =>{
     // 临时数据
      const banners: BannerProps[] = [
-        { imgUrl: '/public/images/banner1.jpg', title: "Roselia-1", info: "Roselia-1" },
-        { imgUrl: '/public/images/banner2.jpg', title: "Roselia-2", info: "Roselia-2" },
-        { imgUrl: '/public/images/banner3.jpg', title: "Roselia-3", info: "Roselia-3" },
+        { imgUrl: '/images/banner1.jpg', title: "Roselia-1", info: "Roselia-1" },
+        { imgUrl: '/images/banner2.jpg', title: "Roselia-2", info: "Roselia-2" },
+        { imgUrl: '/images/banner3.jpg', title: "Roselia-3", info: "Roselia-3" },
     ];
     
 
@@ -30,7 +30,7 @@ const Homepage = () =>{
                 const data: LiveCardProps[] = await res.json();
                 setHotLives(data);
             }catch(e){
-                 setError('热门Live加载失败');
+                setError('热门Live加载失败');
             }finally{
                 setLoading(false);
             }
@@ -56,7 +56,7 @@ const Homepage = () =>{
             title="热门Live"
             actions={<a className="live-section-link" href="/lives/hot">查看全部</a>}
             >
-                 {loading && <div>加载中...</div>}
+                {loading && <div>加载中...</div>}
                 {error && <div className="error">{error}</div>}
                 {!loading && !error && <LiveCardList cards={hotlives} />}
             </DisplaySection>

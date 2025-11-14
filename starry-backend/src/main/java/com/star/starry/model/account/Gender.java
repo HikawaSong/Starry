@@ -1,4 +1,4 @@
-package com.star.starry.model.dto;
+package com.star.starry.model.account;
 
 import lombok.Getter;
 

@@ -1,7 +1,5 @@
-package com.star.starry.model.dto;
+package com.star.starry.model.like;
 
-import com.star.starry.model.LikeTargetType;
-import com.star.starry.model.LikedId;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;

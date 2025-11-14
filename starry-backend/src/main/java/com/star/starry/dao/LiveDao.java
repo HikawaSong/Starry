@@ -1,6 +1,6 @@
 package com.star.starry.dao;
 
-import com.star.starry.model.entity.Live;
+import com.star.starry.model.live.Live;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,4 +17,5 @@ public interface LiveDao extends JpaRepository<Live, String> {
     List<Live> findByIdNotIn(Collection<String> idList, Pageable pageable);
 
     Page<Live> findAll(Pageable pageable);
+
 }

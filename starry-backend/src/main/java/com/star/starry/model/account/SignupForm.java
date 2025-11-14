@@ -1,4 +1,4 @@
-package com.star.starry.model.form;
+package com.star.starry.model.account;
 
 import jakarta.validation.constraints.*;
 import lombok.*;

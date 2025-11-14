@@ -1,5 +1,4 @@
-package com.star.starry.model.dto;
-import com.star.starry.model.entity.Live;
+package com.star.starry.model.live;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

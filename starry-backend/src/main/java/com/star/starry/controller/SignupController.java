@@ -1,7 +1,7 @@
 package com.star.starry.controller;
 
-import com.star.starry.model.dto.Account;
-import com.star.starry.model.form.SignupForm;
+import com.star.starry.model.account.Account;
+import com.star.starry.model.account.SignupForm;
 import com.star.starry.service.SignupService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
