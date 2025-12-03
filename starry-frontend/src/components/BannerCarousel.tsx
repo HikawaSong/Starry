@@ -1,8 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/swiper-bundle.css";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+import './BannerCarousel.css'
 
 import Banner from "../components/Banner";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
 import type { BannerProps } from './Banner'
 
 type BannerCarouselProps = {
@@ -17,7 +20,7 @@ const BannerCarousel =({ banners }: BannerCarouselProps) =>{
 
     return (
          <Swiper 
-            className=" w-full rounded-lg overflow-hidden"
+            className="carousel"
             modules={[Autoplay, Pagination]}
             autoplay={{delay:4000}}
             pagination={{clickable:true}}
@@ -30,6 +33,7 @@ const BannerCarousel =({ banners }: BannerCarouselProps) =>{
                         <Banner {...banner} />
                     </SwiperSlide>
                 ))}
+
             </Swiper>
     )
 }
