@@ -6,7 +6,6 @@ import Homepage from './pages/Homepage'
 import SignupPage from './pages/SignupPage'
 import { ROUTES } from './routes/routes'
 import { Toaster } from "react-hot-toast";
-import ExcelUploadMinimal from './pages/ExcelImport'
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
       <Routes>
         <Route path={ROUTES.HOME} element={<Homepage />} />
         <Route path={ROUTES.SIGN_UP} element={<SignupPage />} />
-        <Route path={ROUTES.IMPORT} element={<ExcelUploadMinimal />} />
       </Routes>
       </BrowserRouter>
       
