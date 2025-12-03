@@ -1,6 +1,6 @@
 import type { BannerProps } from "../components/Banner";
 import BannerCarousel from "../components/BannerCarousel";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/nav/NavBar";
 import StarryBackground from "../components/StarryBackgroud";
 import LiveCardList from "../components/LiveCardList";
 import DisplaySection from "../components/DisplaySection";
@@ -48,10 +48,10 @@ const Homepage = () =>{
         <div className="hp-background">
             <StarryBackground />
         </div>
-        <div className="banner-section">
+        <div className="m-1 py-2">
             <BannerCarousel banners={banners} />
         </div>
-        <div className="live-card-list-section">
+        <div className="mx-auto px-1 md:px-4">
            <DisplaySection
             title="热门Live"
             actions={<a className="live-section-link" href="/lives/hot">查看全部</a>}

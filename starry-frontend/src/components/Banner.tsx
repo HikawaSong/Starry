@@ -1,5 +1,3 @@
-import './Banner.css'
-
 export type BannerProps = {
     imgUrl: string
     title: string
@@ -9,10 +7,13 @@ export type BannerProps = {
 
 const Banner = ({imgUrl,title,info}:BannerProps) => {
     return (
-        <div className="banner-block">
-            <img className="banner-image" src={imgUrl} alt={title}/>
-            <h1 className="banner-title">{title}</h1>
-            <p className="banner-info">{info}</p>
+        <div className="
+            relative w-full overflow-hidden rounded-2xl
+            h-[180px] sm:h-[220px] md:h-[360px] lg:h-[600px]
+            max-w[1200px] mx-auto px-4 md:px-8
+        ">
+            <img className="w-full h-full object-cover block" src={imgUrl} alt={title}/>
+            <p className="text-sm opacity-80">{info}</p>
         </div>
     )
 
