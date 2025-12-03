@@ -18,13 +18,4 @@ const LiveCardList = ({cards}:LiveCards) =>{
   );
 }
 
-const GoodsCardList = ()=>{
-    return(
-        <div className="goods-card-list">
-            
-        </div>
-    )
-
-}
-
 export default LiveCardList
