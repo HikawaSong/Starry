@@ -24,4 +24,22 @@ const LiveCard = ({ id, title, place, venue, url,link}: LiveCardProps) => {
     )
 }
 
+export type GoodsCardProps ={
+    id:string
+    title:string
+    url:string
+    link:string
+}
+
+const GoodsCard = ({id,title,url,link}:GoodsCardProps) => {
+    return (
+      <a href={link} className='live-card'>
+        <img src={url} alt={title} className="live-card-img"/>
+        <div className='live-card-text'>
+             <h3>{title}</h3>
+        </div>
+      </a>
+    )
+} 
+
 export default LiveCard

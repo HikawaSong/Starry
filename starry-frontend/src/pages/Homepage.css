@@ -11,12 +11,6 @@
   z-index: -1;
 }
 
-/* 顶部导航栏 */
-.hp-navbar {
-  /*position: sticky;*/
-  margin: 1.5rem 2rem;
-
-}
 
 /* 主内容 */
 .hp-main {
@@ -25,13 +19,6 @@
   padding: 1rem;
 }
 
-/* Banner 区域 */
-.banner-section {
-  margin-top: 2rem;
-  margin-inline: auto;  /* 自动居中 */
-  max-width: 1400px;   
-  padding-inline: 2rem; /* 内部留白 */
-}
 
 .live-card-list-section {
   margin: 2rem 5rem 0 5rem;  /* 上 右 下 左 */
